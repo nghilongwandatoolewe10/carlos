@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ndatoolewe IT Services | Computer Repair, CCTV & Software Setup - Tsumeb, Namibia</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#0284c7',
+                            600: '#026aa7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        amberAccent: '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-header {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.05);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(2, 132, 199, 0.4);
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col custom-scrollbar">
+
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 glass-header bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo & Brand -->
+                <a href="#home" class="flex items-center space-x-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-600 to-cyan-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                        <i data-lucide="cpu" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white block leading-none">
+                            Ndatoolewe <span class="text-brand-600 dark:text-brand-500">IT Services</span>
+                        </span>
+                        <span class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest block mt-1">
+                            Soweto, Tsumeb • Namibia
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-6 text-sm font-medium">
+                    <a href="#home" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Home</a>
+                    <a href="#services" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Services</a>
+                    <a href="#estimator" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center gap-1.5">
+                        <i data-lucide="calculator" class="w-4 h-4 text-brand-600"></i>
+                        Cost Estimator
+                    </a>
+                    <a href="#about" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">About Us</a>
+                    <a href="#contact" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Contact</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <!-- Theme Toggle -->
+                    <button id="themeToggleBtn" onclick="toggleDarkMode()" aria-label="Toggle dark mode" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+                        <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+                        <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
+                    </button>
+
+                    <!-- CTA Button -->
+                    <a href="#booking" class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-md shadow-brand-600/30 transition flex items-center space-x-2">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <span>Book Service</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center space-x-2 md:hidden">
+                    <button onclick="toggleDarkMode()" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                        <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+                        <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
+                    </button>
+                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-brand-600">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-2 pb-6 space-y-2">
+            <a href="#home" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Home</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Services</a>
+            <a href="#estimator" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Cost Estimator</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">About Us</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Contact</a>
+            <a href="#booking" onclick="toggleMobileMenu()" class="block w-full text-center py-3 rounded-xl bg-brand-600 text-white font-semibold shadow-md mt-4">
+                Book Service / Request Quote
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- HERO BANNER SECTION -->
+        <section id="home" class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-gradient-to-b from-slate-100 via-white to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-900">
+            <!-- Subtle Background Gradients -->
+            <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute top-1/2 -left-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Hero Content -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        
+                        <!-- Top Tagline Badge -->
+                        <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-brand-50 dark:bg-brand-900/40 border border-brand-200 dark:border-brand-800/60 text-brand-700 dark:text-brand-300 text-xs font-semibold uppercase tracking-wider">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span>Educate for Empowerment &bull; Soweto, Tsumeb</span>
+                        </div>
+
+                        <!-- Main Heading -->
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
+                            Reliable <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-cyan-500">Computer Repair</span>, CCTV & Software Solutions
+                        </h1>
+
+                        <!-- Paragraph -->
+                        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0">
+                            Empowering households, schools, and businesses in Tsumeb with fast on-site IT support, professional electronic security installations, and software optimization.
+                        </p>
+
+                        <!-- Call to Action Buttons -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                            <a href="#estimator" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-base shadow-lg shadow-brand-600/30 transition flex items-center justify-center space-x-2">
+                                <i data-lucide="calculator" class="w-5 h-5"></i>
+                                <span>Calculate Service Cost (N$)</span>
+                            </a>
+                            <a href="#booking" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-500 text-slate-800 dark:text-white font-semibold text-base transition flex items-center justify-center space-x-2 shadow-sm">
+                                <i data-lucide="calendar-check" class="w-5 h-5 text-brand-600"></i>
+                                <span>Book On-Site Visit</span>
+                            </a>
+                        </div>
+
+                        <!-- Highlights / Quick Trust Badges -->
+                        <div class="pt-6 border-t border-slate-200 dark:border-slate-800 grid grid-cols-2 sm:grid-cols-3 gap-4 text-left">
+                            <div class="flex items-center space-x-3">
+                                <div class="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400">
+                                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Security First</p>
+                                    <p class="text-sm font-bold text-slate-800 dark:text-slate-200">Data Protection</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-3">
+                                <div class="p-2 rounded-lg bg-brand-100 dark:bg-brand-950/50 text-brand-600 dark:text-brand-400">
+                                    <i data-lucide="zap" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Response</p>
+                                    <p class="text-sm font-bold text-slate-800 dark:text-slate-200">Quick Turnaround</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-3 col-span-2 sm:col-span-1">
+                                <div class="p-2 rounded-lg bg-amber-100 dark:bg-amber-950/50 text-amber-600 dark:text-amber-400">
+                                    <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Licensed</p>
+                                    <p class="text-sm font-bold text-slate-800 dark:text-slate-200">Genuine Software</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Hero Visual / Interactive Card -->
+                    <div class="lg:col-span-5">
+                        <div class="relative bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-700/80 space-y-6">
+                            
+                            <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-700">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-3 h-3 rounded-full bg-emerald-500 animate-ping"></div>
+                                    <span class="text-xs font-semibold tracking-wider text-slate-500 dark:text-slate-400 uppercase">Live Operations Status</span>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">
+                                    Active in Soweto, Tsumeb
+                                </span>
+                            </div>
+
+                            <!-- Featured Service Quick Card -->
+                            <div class="space-y-4">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center justify-between">
+                                    <span>Direct Contact Details</span>
+                                    <i data-lucide="phone-call" class="w-5 h-5 text-brand-600"></i>
+                                </h3>
+
+                                <div class="space-y-3">
+                                    <a href="tel:+264814460816" class="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 hover:bg-brand-50 dark:hover:bg-brand-950/30 transition group border border-slate-200/80 dark:border-slate-700">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-600">
+                                                <i data-lucide="phone" class="w-4 h-4"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-slate-500 dark:text-slate-400">Phone / Call</p>
+                                                <p class="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-brand-600 transition">+264 81 446 0816</p>
+                                            </div>
+                                        </div>
+                                        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform"></i>
+                                    </a>
+
+                                    <a href="https://wa.me/264814460816?text=Hello%20Ndatoolewe%20IT%20Services,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 hover:bg-emerald-50 dark:hover:bg-emerald-950/30 transition group border border-slate-200/80 dark:border-slate-700">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-600">
+                                                <i data-lucide="message-square" class="w-4 h-4"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-slate-500 dark:text-slate-400">Direct WhatsApp</p>
+                                                <p class="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-emerald-600 transition">Instant Message Support</p>
+                                            </div>
+                                        </div>
+                                        <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform"></i>
+                                    </a>
+
+                                    <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-700">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="p-2 rounded-lg bg-cyan-500/10 text-cyan-600">
+                                                <i data-lucide="mail" class="w-4 h-4"></i>
+                                            </div>
+                                            <div class="overflow-hidden">
+                                                <p class="text-xs text-slate-500 dark:text-slate-400">Official Email</p>
+                                                <p class="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 truncate">nghilongwandatoolewe10@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-gradient-to-r from-brand-600 to-cyan-600 text-white flex items-center justify-between">
+                                <div>
+                                    <p class="text-xs opacity-90">Managing Director</p>
+                                    <p class="text-base font-bold">Nghilongwa Ndatoolewe</p>
+                                </div>
+                                <div class="p-2 bg-white/20 rounded-xl">
+                                    <i data-lucide="user-check" class="w-6 h-6"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="services" class="py-20 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400">Core Capabilities</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Our Technical Solutions & Services</p>
+                    <p class="text-slate-600 dark:text-slate-400 text-base">
+                        Tailored technology services providing reliable repair, electronic security installation, and maintenance for home and business clients.
+                    </p>
+                </div>
+
+                <!-- Services Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Card 1: Computer Repair -->
+                    <div class="bg-slate-50 dark:bg-slate-800/60 rounded-3xl p-8 border border-slate-200 dark:border-slate-700/80 hover:shadow-xl hover:border-brand-500 dark:hover:border-brand-500 transition-all group flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                                <i data-lucide="wrench" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Computer Repair & Hardware</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed">
+                                Complete diagnostics, hardware replacements, SSD/RAM upgrades, virus removal, thermal repasting, and system optimization.
+                            </p>
+                            <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300 mb-8">
+                                <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>RAM & SSD Upgrades</span></li>
+                                <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>Virus & Malware Removal</span></li>
+                                <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>Overheating & Power Repair</span></li>
+                            </ul>
+                        </div>
+                        <button onclick="openServiceModal('computer-repair')" class="w-full py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-800 dark:text-slate-200 hover:bg-brand-600 hover:text-white hover:border-brand-600 font-semibold text-sm transition">
+                            View Details
+                        </button>
+                    </div>
+
+                    <!-- Card 2: CCTV Installation -->
+                    <div class="bg-slate-50 dark:bg-slate-800/60 rounded-3xl p-8 border border-slate-200 dark:border-slate-700/80 hover:shadow-xl hover:border-brand-500 dark:hover:border-brand-500 transition-all group flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-6 group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                                <i data-lucide="video" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">CCTV Installation & Security</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed">
+                                Professional site assessments, HD camera mounting, DVR/NVR cabling, storage configuration, and remote smartphone monitoring setup.
+                            </p>
+                            <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300 mb-8">
+                                <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>DVR / NVR Storage Config</span></li>
+                                <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>Mobile Phone Live Viewing</span></li>
+                                <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>System Repairs & Upgrades</span></li>
+                            </ul>
+                        </div>
+                        <button onclick="openServiceModal('cctv-setup')" class="w-full py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-800 dark:text-slate-200 hover:bg-brand-600 hover:text-white hover:border-brand-600 font-semibold text-sm transition">
+                            View Details
+                        </button>
+                    </div>
+
+                    <!-- Card 3: Software Installation -->
+                    <div class="bg-slate-50 dark:bg-slate-800/60 rounded-3xl p-8 border border-slate-200 dark:border-slate-700/80 hover:shadow-xl hover:border-brand-500 dark:hover:border-brand-500 transition-all group flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i data-lucide="layers" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Software Setup & Licensing</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed">
+                                Installation and setup of genuine operating systems, office suites, driver updates, antivirus software, and accounting packages.
+                            </p>
+                            <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300 mb-8">
+                                <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>Legitimate OS Installation</span></li>
+                                <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>Office Productivity Suites</span></li>
+                                <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>Zero Piracy Guarantee</span></li>
+                            </ul>
+                        </div>
+                        <button onclick="openServiceModal('software-setup')" class="w-full py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-800 dark:text-slate-200 hover:bg-brand-600 hover:text-white hover:border-brand-600 font-semibold text-sm transition">
+                            View Details
+                        </button>
+                    </div>
+
+                    <!-- Card 4: On-Site IT Support -->
+                    <div class="bg-slate-50 dark:bg-slate-800/60 rounded-3xl p-8 border border-slate-200 dark:border-slate-700/80 hover:shadow-xl hover:border-brand-500 dark:hover:border-brand-500 transition-all group flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-6 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                <i data-lucide="truck" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">On-Site IT Support</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed">
+                                Convenient call-outs directly to your home, office, school, or retail store in Tsumeb and surrounding regions.
+                            </p>
+                            <ul class="space-y-2 text-xs font-medium text-slate-700 dark:text-slate-300 mb-8">
+                                <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>Network Troubleshooting</span></li>
+                                <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>Printer & Scanner Config</span></li>
+                                <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>On-Site Diagnostics</span></li>
+                            </ul>
+                        </div>
+                        <button onclick="openServiceModal('onsite-support')" class="w-full py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-800 dark:text-slate-200 hover:bg-brand-600 hover:text-white hover:border-brand-600 font-semibold text-sm transition">
+                            View Details
+                        </button>
+                    </div>
+
+                    <!-- Card 5: Recurring Contracts -->
+                    <div class="bg-slate-50 dark:bg-slate-800/60 rounded-3xl p-8 border border-slate-200 dark:border-slate-700/80 hover:shadow-xl hover:border-brand-500 dark:hover:border-brand-500 transition-all group flex flex-col justify-between md:col-span-2 lg:col-span-2">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                                <i data-lucide="shield" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">SLA & Business Maintenance Packages</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed">
+                                Scheduled monthly maintenance contracts designed for small businesses, schools, shops, and offices to ensure zero downtime, periodic backups, and proactive security checks.
+                            </p>
+                            <div class="grid sm:grid-cols-2 gap-3 text-xs font-medium text-slate-700 dark:text-slate-300 mb-8">
+                                <span class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>Regular Antivirus & Health Checks</span></span>
+                                <span class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>Automated Backup Supervision</span></span>
+                                <span class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>Priority Response Times</span></span>
+                                <span class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-500"></i><span>Routine CCTV Inspections</span></span>
+                            </div>
+                        </div>
+                        <button onclick="openServiceModal('maintenance-contracts')" class="w-full sm:w-auto px-6 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-800 dark:text-slate-200 hover:bg-brand-600 hover:text-white hover:border-brand-600 font-semibold text-sm transition">
+                            Explore SLA Contract Options
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE COST ESTIMATOR / QUOTATION GENERATOR -->
+        <section id="estimator" class="py-20 bg-slate-100 dark:bg-slate-950/80 border-t border-slate-200 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-900/60 text-brand-700 dark:text-brand-300 text-xs font-bold uppercase tracking-wider">
+                        Interactive Tool
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Service Cost Estimator (NAD)</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base">
+                        Select your required IT or CCTV services to generate an instant estimate in Namibian Dollars (N$).
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Calculator Options Form (Left) -->
+                    <div class="lg:col-span-7 bg-white dark:bg-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200 dark:border-slate-700 space-y-8">
+                        
+                        <!-- Step 1: Computer Services -->
+                        <div>
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-4 flex items-center space-x-2">
+                                <i data-lucide="monitor" class="w-5 h-5 text-brand-600"></i>
+                                <span>1. Computer Repair & Maintenance</span>
+                            </h3>
+                            <div class="grid sm:grid-cols-2 gap-3">
+                                <label class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 cursor-pointer transition flex items-start space-x-3 bg-slate-50 dark:bg-slate-900/40">
+                                    <input type="checkbox" id="est_comp_diag" onchange="calculateEstimate()" class="mt-1 rounded text-brand-600 focus:ring-brand-500 w-4 h-4">
+                                    <div class="text-xs">
+                                        <p class="font-bold text-slate-800 dark:text-slate-200">Diagnostic & Cleaning</p>
+                                        <p class="text-slate-500 dark:text-slate-400">N$ 250</p>
+                                    </div>
+                                </label>
+
+                                <label class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 cursor-pointer transition flex items-start space-x-3 bg-slate-50 dark:bg-slate-900/40">
+                                    <input type="checkbox" id="est_comp_virus" onchange="calculateEstimate()" class="mt-1 rounded text-brand-600 focus:ring-brand-500 w-4 h-4">
+                                    <div class="text-xs">
+                                        <p class="font-bold text-slate-800 dark:text-slate-200">Virus Removal & Speedup</p>
+                                        <p class="text-slate-500 dark:text-slate-400">N$ 350</p>
+                                    </div>
+                                </label>
+
+                                <label class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 cursor-pointer transition flex items-start space-x-3 bg-slate-50 dark:bg-slate-900/40">
+                                    <input type="checkbox" id="est_comp_os" onchange="calculateEstimate()" class="mt-1 rounded text-brand-600 focus:ring-brand-500 w-4 h-4">
+                                    <div class="text-xs">
+                                        <p class="font-bold text-slate-800 dark:text-slate-200">OS Format & Drivers</p>
+                                        <p class="text-slate-500 dark:text-slate-400">N$ 450</p>
+                                    </div>
+                                </label>
+
+                                <label class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 cursor-pointer transition flex items-start space-x-3 bg-slate-50 dark:bg-slate-900/40">
+                                    <input type="checkbox" id="est_comp_ram" onchange="calculateEstimate()" class="mt-1 rounded text-brand-600 focus:ring-brand-500 w-4 h-4">
+                                    <div class="text-xs">
+                                        <p class="font-bold text-slate-800 dark:text-slate-200">SSD / RAM Upgrade Fit</p>
+                                        <p class="text-slate-500 dark:text-slate-400">N$ 400</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: CCTV System Setup -->
+                        <div class="pt-4 border-t border-slate-100 dark:border-slate-700/60">
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-4 flex items-center space-x-2">
+                                <i data-lucide="video" class="w-5 h-5 text-cyan-600"></i>
+                                <span>2. CCTV Security Installation</span>
+                            </h3>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <label for="est_cctv_qty" class="text-sm font-semibold text-slate-700 dark:text-slate-300">
+                                        Number of Cameras: <span id="est_cctv_val" class="text-brand-600 font-extrabold text-base">2</span>
+                                    </label>
+                                    <span class="text-xs text-slate-500 dark:text-slate-400">(N$ 850 per camera kit + labor)</span>
+                                </div>
+                                <input type="range" id="est_cctv_qty" min="0" max="16" value="2" step="1" oninput="calculateEstimate()" class="w-full accent-brand-600 cursor-pointer">
+
+                                <div class="grid sm:grid-cols-2 gap-3 pt-2">
+                                    <label class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 cursor-pointer transition flex items-start space-x-3 bg-slate-50 dark:bg-slate-900/40">
+                                        <input type="checkbox" id="est_cctv_mobile" onchange="calculateEstimate()" class="mt-1 rounded text-brand-600 focus:ring-brand-500 w-4 h-4">
+                                        <div class="text-xs">
+                                            <p class="font-bold text-slate-800 dark:text-slate-200">Mobile Phone Streaming Config</p>
+                                            <p class="text-slate-500 dark:text-slate-400">N$ 300</p>
+                                        </div>
+                                    </label>
+
+                                    <label class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 cursor-pointer transition flex items-start space-x-3 bg-slate-50 dark:bg-slate-900/40">
+                                        <input type="checkbox" id="est_cctv_maintenance" onchange="calculateEstimate()" class="mt-1 rounded text-brand-600 focus:ring-brand-500 w-4 h-4">
+                                        <div class="text-xs">
+                                            <p class="font-bold text-slate-800 dark:text-slate-200">Full System Diagnostics Check</p>
+                                            <p class="text-slate-500 dark:text-slate-400">N$ 500</p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Location / On-site Call Out -->
+                        <div class="pt-4 border-t border-slate-100 dark:border-slate-700/60">
+                            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-4 flex items-center space-x-2">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-purple-600"></i>
+                                <span>3. Location & Support Call-Out</span>
+                            </h3>
+                            
+                            <select id="est_location" onchange="calculateEstimate()" class="w-full p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                                <option value="0">Workshop Drop-off (Soweto, Tsumeb) - Free Call-out</option>
+                                <option value="150">On-Site Visit: Soweto & Tsumeb Central (+N$ 150)</option>
+                                <option value="350">On-Site Visit: Tsumeb Outskirts / Farms (+N$ 350)</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <!-- Live Breakdown & Summary Card (Right) -->
+                    <div class="lg:col-span-5 bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 relative overflow-hidden">
+                        
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-700">
+                            <div>
+                                <p class="text-xs text-slate-400 uppercase font-semibold">Live Estimate Summary</p>
+                                <h3 class="text-xl font-extrabold text-white">Estimated Investment</h3>
+                            </div>
+                            <span class="px-3 py-1 rounded-full text-xs font-bold bg-brand-500/20 text-brand-300 border border-brand-500/30">
+                                Quote Ref: #NDT-<span id="quoteRefNumber">001</span>
+                            </span>
+                        </div>
+
+                        <!-- Breakdown list -->
+                        <div id="est_breakdown" class="space-y-3 max-h-56 overflow-y-auto custom-scrollbar pr-2 text-xs sm:text-sm">
+                            <p class="text-slate-400 italic">No services selected yet. Select options on the left to see the breakdown.</p>
+                        </div>
+
+                        <!-- Grand Total -->
+                        <div class="pt-4 border-t border-slate-700 flex items-end justify-between">
+                            <div>
+                                <p class="text-xs text-slate-400">Estimated Total (N$)</p>
+                                <p class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-brand-300">
+                                    N$ <span id="est_total_val">0</span>
+                                </p>
+                            </div>
+                            <p class="text-[10px] text-slate-400 text-right">Includes estimated labor.<br>Hardware/parts subject to quote.</p>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="space-y-3 pt-2">
+                            <button onclick="sendEstimateToWhatsApp()" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 font-bold text-white transition flex items-center justify-center space-x-2 shadow-lg shadow-emerald-600/30">
+                                <i data-lucide="message-square" class="w-5 h-5"></i>
+                                <span>Send Estimate via WhatsApp</span>
+                            </button>
+                            
+                            <button onclick="applyEstimateToBooking()" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-600 font-semibold text-xs text-slate-200 transition flex items-center justify-center space-x-2">
+                                <i data-lucide="arrow-down-circle" class="w-4 h-4"></i>
+                                <span>Transfer Estimate to Booking Form</span>
+                            </button>
+                        </div>
+
+                        <p class="text-[11px] text-slate-400 text-center leading-snug">
+                            Ndatoolewe IT Services provides transparent pricing. Formal invoices are issued prior to work execution.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- INTERACTIVE BOOKING & QUOTE REQUEST FORM -->
+        <section id="booking" class="py-20 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center space-y-4 mb-12">
+                    <span class="px-3 py-1 rounded-full bg-cyan-100 dark:bg-cyan-900/60 text-cyan-700 dark:text-cyan-300 text-xs font-bold uppercase tracking-wider">
+                        Online Booking
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Request a Quote / Book Technical Service</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base">
+                        Submit your detailed requirements and our technician will contact you promptly.
+                    </p>
+                </div>
+
+                <!-- Form Box -->
+                <div class="bg-slate-50 dark:bg-slate-800/80 rounded-3xl p-6 sm:p-10 border border-slate-200 dark:border-slate-700/80 shadow-xl">
+                    <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="space-y-6">
+                        
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <!-- Full Name -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Full Name *</label>
+                                <input type="text" required id="book_name" placeholder="e.g. Taimi Nghilongwa" class="w-full p-3.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                            </div>
+
+                            <!-- Phone / WhatsApp -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Phone / WhatsApp *</label>
+                                <input type="tel" required id="book_phone" placeholder="e.g. +264 81 123 4567" class="w-full p-3.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <!-- Email -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Email Address</label>
+                                <input type="email" id="book_email" placeholder="e.g. client@gmail.com" class="w-full p-3.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                            </div>
+
+                            <!-- Service Type -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Primary Service Required *</label>
+                                <select id="book_service" required class="w-full p-3.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                                    <option value="">Select a service category...</option>
+                                    <option value="Computer Repair & Maintenance">Computer Repair & Maintenance</option>
+                                    <option value="CCTV Installation & Security">CCTV Camera Installation</option>
+                                    <option value="Software Setup & Licensing">Software Setup & OS Install</option>
+                                    <option value="On-Site IT Consultation">On-Site IT Consultation</option>
+                                    <option value="Monthly SLA Maintenance Contract">Monthly SLA Contract</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <!-- Location in Tsumeb -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Location / Area *</label>
+                                <input type="text" required id="book_location" placeholder="e.g. Soweto, Tsumeb Central, or Farm Area" class="w-full p-3.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                            </div>
+
+                            <!-- Support Type -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Service Location Mode *</label>
+                                <select id="book_mode" required class="w-full p-3.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                                    <option value="On-Site Visit Requested">On-Site Visit Requested (Technician comes to you)</option>
+                                    <option value="Workshop Drop-off">Workshop Drop-off (Soweto, Tsumeb)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Problem Description -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Problem Description / Project Scope *</label>
+                            <textarea id="book_details" required rows="4" placeholder="Describe the problem (e.g. Computer slow, virus warning, need 4 cameras installed around shop)..." class="w-full p-3.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-sm focus:ring-2 focus:ring-brand-500 outline-none resize-none"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 to-cyan-600 hover:from-brand-700 hover:to-cyan-700 text-white font-bold text-base shadow-lg shadow-brand-600/30 transition flex items-center justify-center space-x-2">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                            <span>Submit Booking & Request Formal Quote</span>
+                        </button>
+
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ABOUT US & FEASIBILITY REPORT HIGHLIGHTS SECTION -->
+        <section id="about" class="py-20 bg-slate-100 dark:bg-slate-950/70 border-t border-slate-200 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-6">
+                        <span class="px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 text-xs font-bold uppercase tracking-wider">
+                            Feasibility Study Highlights
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">
+                            Driven by Technical Precision & Strict Data Protection
+                        </h2>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                            Established by <strong>Nghilongwa Ndatoolewe</strong> in Soweto, Tsumeb, Ndatoolewe IT Services was founded to address the increasing dependency on technology and security systems among individuals, schools, and local businesses.
+                        </p>
+
+                        <!-- Highlights List -->
+                        <div class="space-y-4 pt-2">
+                            <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-start space-x-4">
+                                <div class="p-2.5 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 mt-1">
+                                    <i data-lucide="lock" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 dark:text-white text-sm">Strict Data Privacy Protocol</h4>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                                        We never access personal client files unnecessarily. Passwords and sensitive operational data remain confidential with secure local backups.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-start space-x-4">
+                                <div class="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 mt-1">
+                                    <i data-lucide="shield-alert" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 dark:text-white text-sm">Anti-Piracy Commitment</h4>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                                        We strictly install legally authorized, genuine software applications and operating systems to prevent security vulnerabilities.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-start space-x-4">
+                                <div class="p-2.5 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 mt-1">
+                                    <i data-lucide="award" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 dark:text-white text-sm">Transparent Cost Structure</h4>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                                        Clients are advised on root causes and hardware replacement pricing before any repair work commences.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Market Focus Cards -->
+                    <div class="lg:col-span-6 bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 shadow-xl space-y-6">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-700 pb-4">
+                            Target Markets Served in Tsumeb
+                        </h3>
+
+                        <div class="grid sm:grid-cols-2 gap-4 text-xs font-medium">
+                            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-700/60">
+                                <i data-lucide="home" class="w-5 h-5 text-brand-600 mb-2"></i>
+                                <p class="font-bold text-slate-900 dark:text-white text-sm">Households & Students</p>
+                                <p class="text-slate-500 dark:text-slate-400 mt-1">Laptop repairs, home CCTV security, Wi-Fi optimization & software setup.</p>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-700/60">
+                                <i data-lucide="store" class="w-5 h-5 text-emerald-600 mb-2"></i>
+                                <p class="font-bold text-slate-900 dark:text-white text-sm">Shops & Retail</p>
+                                <p class="text-slate-500 dark:text-slate-400 mt-1">Multi-camera CCTV systems, POS network troubleshooting & maintenance.</p>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-700/60">
+                                <i data-lucide="graduation-cap" class="w-5 h-5 text-purple-600 mb-2"></i>
+                                <p class="font-bold text-slate-900 dark:text-white text-sm">Schools & Institutions</p>
+                                <p class="text-slate-500 dark:text-slate-400 mt-1">Computer lab maintenance, network cabling & software configurations.</p>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-700/60">
+                                <i data-lucide="building-2" class="w-5 h-5 text-cyan-600 mb-2"></i>
+                                <p class="font-bold text-slate-900 dark:text-white text-sm">Small Offices & Firms</p>
+                                <p class="text-slate-500 dark:text-slate-400 mt-1">Periodic SLA maintenance, backup routines & full IT support.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-brand-50 dark:bg-brand-950/40 border border-brand-200 dark:border-brand-800/50 text-brand-900 dark:text-brand-200 text-xs">
+                            <p class="font-bold">Company Location Details:</p>
+                            <p class="mt-0.5">Soweto, Tsumeb &bull; Phone: +264 81 446 0816 &bull; Email: nghilongwandatoolewe10@gmail.com</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT & LOCATION SECTION -->
+        <section id="contact" class="py-20 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-900/60 text-brand-700 dark:text-brand-300 text-xs font-bold uppercase tracking-wider">
+                        Get In Touch
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Contact Ndatoolewe IT Services</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-base">
+                        Have a technical question or need urgent hardware/CCTV assistance in Tsumeb? Connect with us directly.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8">
+                    
+                    <!-- Contact Information Cards (Left) -->
+                    <div class="lg:col-span-5 space-y-4">
+                        
+                        <div class="bg-slate-50 dark:bg-slate-800/80 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 flex items-start space-x-4">
+                            <div class="p-3 rounded-2xl bg-brand-600 text-white shadow-md">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white text-base">Workshop Location</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Soweto, Tsumeb, Oshikoto Region, Namibia</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 dark:bg-slate-800/80 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 flex items-start space-x-4">
+                            <div class="p-3 rounded-2xl bg-emerald-600 text-white shadow-md">
+                                <i data-lucide="phone" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white text-base">Phone & WhatsApp</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">+264 81 446 0816</p>
+                                <a href="https://wa.me/264814460816" target="_blank" class="inline-flex items-center space-x-1 text-xs font-bold text-emerald-600 dark:text-emerald-400 mt-2 hover:underline">
+                                    <span>Chat on WhatsApp</span>
+                                    <i data-lucide="external-link" class="w-3 h-3"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 dark:bg-slate-800/80 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 flex items-start space-x-4">
+                            <div class="p-3 rounded-2xl bg-cyan-600 text-white shadow-md">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white text-base">Email Address</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">nghilongwandatoolewe10@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-3xl bg-slate-900 text-white space-y-2">
+                            <p class="text-xs text-brand-400 font-bold uppercase tracking-wider">Business Operating Hours</p>
+                            <p class="text-sm font-semibold">Monday - Friday: 08:00 - 17:00</p>
+                            <p class="text-sm font-semibold">Saturday: 09:00 - 13:00</p>
+                            <p class="text-xs text-slate-400">Emergency & On-Site support available by appointment.</p>
+                        </div>
+
+                    </div>
+
+                    <!-- Quick Direct Message Form (Right) -->
+                    <div class="lg:col-span-7 bg-slate-50 dark:bg-slate-800/80 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-xl">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Send an Immediate Message</h3>
+                        
+                        <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-2">Your Name</label>
+                                <input type="text" required id="contact_name" placeholder="Your Full Name" class="w-full p-3.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-2">Phone Number</label>
+                                    <input type="tel" required id="contact_phone" placeholder="+264..." class="w-full p-3.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-2">Email</label>
+                                    <input type="email" id="contact_email" placeholder="Optional" class="w-full p-3.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-2">Message</label>
+                                <textarea required id="contact_msg" rows="4" placeholder="How can we assist you today?" class="w-full p-3.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-sm focus:ring-2 focus:ring-brand-500 outline-none resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md shadow-brand-600/30 transition flex items-center justify-center space-x-2">
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                                <span>Send Inquiry</span>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <span class="text-lg font-extrabold text-white">Ndatoolewe IT Services</span>
+                    <p class="text-xs text-slate-400 mt-1">Computer Repair, CCTV Installation & Software Setup &bull; Soweto, Tsumeb</p>
+                </div>
+
+                <div class="text-xs text-center md:text-right">
+                    <p>&copy; 2026 Ndatoolewe IT Services. All Rights Reserved.</p>
+                    <p class="text-slate-500 mt-0.5">Prepared by Nghilongwa Ndatoolewe</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP CHAT BUTTON -->
+    <a href="https://wa.me/264814460816?text=Hello%20Ndatoolewe%20IT%20Services!%20I%20have%20an%20IT%20inquiry." target="_blank" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-40 p-4 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white shadow-2xl shadow-emerald-600/40 transition-transform hover:scale-110 flex items-center justify-center">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+
+    <!-- DYNAMIC SERVICE DETAIL MODAL -->
+    <div id="serviceModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-800 rounded-3xl max-w-xl w-full p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-2xl relative space-y-6 max-h-[90vh] overflow-y-auto custom-scrollbar">
+            
+            <button onclick="closeServiceModal()" class="absolute top-6 right-6 p-2 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div id="modalContent">
+                <!-- Content inserted dynamically via JS -->
+            </div>
+
+            <div class="pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-end">
+                <a href="#booking" onclick="closeServiceModal()" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md">
+                    Proceed to Booking Form
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Dark / Light Mode Toggle Logic
+        function toggleDarkMode() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Apply saved theme on load
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // Mobile Menu Toggle Logic
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // ESTIMATOR CALCULATOR LOGIC
+        function calculateEstimate() {
+            let total = 0;
+            let breakdownHTML = '';
+
+            // 1. Computer Repairs
+            if (document.getElementById('est_comp_diag').checked) {
+                total += 250;
+                breakdownHTML += `<div class="flex justify-between text-slate-300"><span>Computer Diagnostic & Cleaning</span><span class="font-bold">N$ 250</span></div>`;
+            }
+            if (document.getElementById('est_comp_virus').checked) {
+                total += 350;
+                breakdownHTML += `<div class="flex justify-between text-slate-300"><span>Virus Removal & Optimization</span><span class="font-bold">N$ 350</span></div>`;
+            }
+            if (document.getElementById('est_comp_os').checked) {
+                total += 450;
+                breakdownHTML += `<div class="flex justify-between text-slate-300"><span>OS Format & Driver Config</span><span class="font-bold">N$ 450</span></div>`;
+            }
+            if (document.getElementById('est_comp_ram').checked) {
+                total += 400;
+                breakdownHTML += `<div class="flex justify-between text-slate-300"><span>RAM / SSD Installation Fit</span><span class="font-bold">N$ 400</span></div>`;
+            }
+
+            // 2. CCTV System
+            const cctvQty = parseInt(document.getElementById('est_cctv_qty').value) || 0;
+            document.getElementById('est_cctv_val').innerText = cctvQty;
+            
+            if (cctvQty > 0) {
+                const cctvCost = cctvQty * 850;
+                total += cctvCost;
+                breakdownHTML += `<div class="flex justify-between text-slate-300"><span>CCTV Package (${cctvQty} Camera Kit + Mounting)</span><span class="font-bold">N$ ${cctvCost}</span></div>`;
+            }
+
+            if (document.getElementById('est_cctv_mobile').checked) {
+                total += 300;
+                breakdownHTML += `<div class="flex justify-between text-slate-300"><span>Mobile Remote Stream Setup</span><span class="font-bold">N$ 300</span></div>`;
+            }
+            if (document.getElementById('est_cctv_maintenance').checked) {
+                total += 500;
+                breakdownHTML += `<div class="flex justify-between text-slate-300"><span>CCTV Diagnostic Check</span><span class="font-bold">N$ 500</span></div>`;
+            }
+
+            // 3. Location / On-site Call Out Fee
+            const locationFee = parseInt(document.getElementById('est_location').value) || 0;
+            if (locationFee > 0) {
+                total += locationFee;
+                breakdownHTML += `<div class="flex justify-between text-slate-300"><span>On-Site Call-Out Travel Fee</span><span class="font-bold">N$ ${locationFee}</span></div>`;
+            }
+
+            // Update UI
+            document.getElementById('est_total_val').innerText = total;
+            document.getElementById('est_breakdown').innerHTML = breakdownHTML || `<p class="text-slate-400 italic">No services selected yet. Select options on the left to view summary.</p>`;
+        }
+
+        // Send calculated estimate to WhatsApp
+        function sendEstimateToWhatsApp() {
+            const total = document.getElementById('est_total_val').innerText;
+            const ref = document.getElementById('quoteRefNumber').innerText;
+            if (total === "0") {
+                alert("Please select at least one service option before sending an estimate.");
+                return;
+            }
+            const message = encodeURIComponent(`Hello Ndatoolewe IT Services! I used your web estimator (Quote Ref: #NDT-${ref}). My estimated total is N$ ${total}. I would like to confirm availability for my request.`);
+            window.open(`https://wa.me/264814460816?text=${message}`, '_blank');
+        }
+
+        // Apply estimator selections into booking form
+        function applyEstimateToBooking() {
+            const total = document.getElementById('est_total_val').innerText;
+            const ref = document.getElementById('quoteRefNumber').innerText;
+            if (total === "0") {
+                alert("Please select services in the estimator first.");
+                return;
+            }
+            
+            document.getElementById('book_details').value = `Estimator Quote Reference #NDT-${ref} (Estimated Total: N$ ${total}). Selected services calculated via web estimator.`;
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // SERVICE MODALS DATA
+        const serviceModalData = {
+            'computer-repair': {
+                title: 'Computer Repair & Maintenance Services',
+                icon: 'wrench',
+                description: 'Comprehensive hardware and software solutions for slow, non-starting, or infected computers and laptops.',
+                items: [
+                    'Hardware fault diagnosis and thermal paste renewal',
+                    'Virus, spyware, and adware removal',
+                    'RAM upgrades and High-speed SSD installation',
+                    'Laptop keyboard, screen, and battery replacements',
+                    'Printer & scanner network setup',
+                    'Data backup and recovery assistance'
+                ]
+            },
+            'cctv-setup': {
+                title: 'CCTV Installation & Electronic Security',
+                icon: 'video',
+                description: 'End-to-end security camera installations for residential homes, shops, schools, and business premises in Tsumeb.',
+                items: [
+                    'Comprehensive site security assessment',
+                    'Indoor & outdoor weatherproof camera installation',
+                    'DVR / NVR hard drive storage configuration',
+                    'Cabling, power supply, and monitor connectivity',
+                    'Mobile phone live remote viewing configuration',
+                    'CCTV troubleshooting and maintenance upgrades'
+                ]
+            },
+            'software-setup': {
+                title: 'Software Installation & Optimization',
+                icon: 'layers',
+                description: 'Authorized setup of software application suites, operating systems, and security packages with a 100% genuine software policy.',
+                items: [
+                    'Operating system installation (Windows / Linux)',
+                    'Official Office productivity suite setup',
+                    'Antivirus and firewall security configuration',
+                    'System driver updates & hardware optimization',
+                    'User account setup & data migration',
+                    'Basic user training on installed packages'
+                ]
+            },
+            'onsite-support': {
+                title: 'On-Site IT Call-Out Services',
+                icon: 'truck',
+                description: 'Convenient technical support brought directly to your doorstep in Soweto, Tsumeb Central, and surrounding farm areas.',
+                items: [
+                    'On-premises network & Wi-Fi troubleshooting',
+                    'Shared printer & network drive setups',
+                    'Emergency computer repairs without moving your equipment',
+                    'Security system inspections',
+                    'General technical consultation'
+                ]
+            },
+            'maintenance-contracts': {
+                title: 'Monthly SLA Maintenance Contracts',
+                icon: 'shield',
+                description: 'Sustained IT support packages designed to keep business systems online, secured, and updated continuously.',
+                items: [
+                    'Periodic computer cleaning & software health checks',
+                    'Automated local & cloud data backups',
+                    'Regular antivirus updates & malware scans',
+                    'Scheduled CCTV camera lens cleaning & cabling checks',
+                    'Priority response time for technical call-outs'
+                ]
+            }
+        };
+
+        function openServiceModal(key) {
+            const data = serviceModalData[key];
+            if (!data) return;
+
+            let itemsHTML = data.items.map(i => `<li class="flex items-center space-x-2 text-sm text-slate-700 dark:text-slate-300"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i><span>${i}</span></li>`).join('');
+
+            document.getElementById('modalContent').innerHTML = `
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="p-3 rounded-2xl bg-brand-500/10 text-brand-600 dark:text-brand-400">
+                        <i data-lucide="${data.icon}" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">${data.title}</h3>
+                </div>
+                <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">${data.description}</p>
+                <div class="space-y-3">
+                    <p class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider">Service Scope Includes:</p>
+                    <ul class="space-y-2.5">${itemsHTML}</ul>
+                </div>
+            `;
+            
+            lucide.createIcons();
+            document.getElementById('serviceModal').classList.remove('hidden');
+        }
+
+        function closeServiceModal() {
+            document.getElementById('serviceModal').classList.add('hidden');
+        }
+
+        // HANDLE BOOKING FORM SUBMISSION
+        function handleBookingSubmit(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('book_name').value;
+            const phone = document.getElementById('book_phone').value;
+            const service = document.getElementById('book_service').value;
+            const location = document.getElementById('book_location').value;
+            const mode = document.getElementById('book_mode').value;
+            const details = document.getElementById('book_details').value;
+
+            const summaryMessage = `*New Service Booking Request*%0A%0A` +
+                `*Name:* ${encodeURIComponent(name)}%0A` +
+                `*Phone:* ${encodeURIComponent(phone)}%0A` +
+                `*Service:* ${encodeURIComponent(service)}%0A` +
+                `*Location:* ${encodeURIComponent(location)} (${encodeURIComponent(mode)})%0A` +
+                `*Details:* ${encodeURIComponent(details)}`;
+
+            window.open(`https://wa.me/264814460816?text=${summaryMessage}`, '_blank');
+
+            alert('Thank you! Your booking details have been prepared. You will now be redirected to WhatsApp to confirm your submission.');
+            document.getElementById('bookingForm').reset();
+        }
+
+        // HANDLE CONTACT FORM SUBMISSION
+        function handleContactSubmit(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('contact_name').value;
+            const phone = document.getElementById('contact_phone').value;
+            const msg = document.getElementById('contact_msg').value;
+
+            const text = `*Inquiry from Website*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Message:* ${encodeURIComponent(msg)}`;
+            window.open(`https://wa.me/264814460816?text=${text}`, '_blank');
+
+            alert('Your message has been formatted! Opening WhatsApp to complete delivery.');
+            document.getElementById('contactForm').reset();
+        }
+
+        // Initialize random quote reference
+        document.getElementById('quoteRefNumber').innerText = Math.floor(100 + Math.random() * 900);
+    </script>
+</body>
+</html>
